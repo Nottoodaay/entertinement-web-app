@@ -1,7 +1,6 @@
 "use client"
 
 import React from 'react'
-import { MouseEventHandler, useRef, useState } from "react";
 import  movies  from '../../../data.json';
 import { Card, CardContent } from "@/components/ui/card"
  
@@ -19,7 +18,7 @@ export const MyCarousel = () => {
       opts={{
         align: "start",
       }}
-      className="w-full max-w-sm"
+      className="w-[100vw] max-w-sm"
     >
       <CarouselContent>
         {trendingMovies.map((movie) => (

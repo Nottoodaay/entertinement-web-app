@@ -10,6 +10,8 @@ import tvSeries from '/public/assets/icon-nav-tv-series.svg'
 import bookMark from '/public/assets/icon-nav-bookmark.svg'
 import avatar from '/public/assets/image-avatar.png'
 
+import Link from 'next/link'
+
 export const NavBar = () => {
   return (
     <div
@@ -17,9 +19,15 @@ export const NavBar = () => {
      bg-[#161D2F] flex lg:flex-col items-center justify-between m-4 p-4'>
         <Image src={logo} alt="logo" className=' cursor-pointer w-[25px] h-[20px]' />
         <div className=' flex lg:flex-col gap-[24px]'>
+          <Link href={'/dashboard'}>
             <Image src={home} alt="home" className=' cursor-pointer'/>
-            <Image src={movies} alt="movie" className=' cursor-pointer'/>
-            <Image src={tvSeries} alt="tv" className=' cursor-pointer'/>
+          </Link> 
+            <Link href={'/dashboard/movies'}>
+              <Image src={movies} alt="movie" className=' cursor-pointer'/>
+            </Link>
+            <Link href={'/dashboard/tvseries'}>
+              <Image src={tvSeries} alt="tv" className=' cursor-pointer'/>
+            </Link>
             <Image src={bookMark} alt="bookmark" className=' cursor-pointer' />
         </div>
         <Image src={avatar} alt="avatar" className=' cursor-pointer w-[32px] h-[32px]' />
