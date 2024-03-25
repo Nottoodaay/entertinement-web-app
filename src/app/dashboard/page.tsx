@@ -9,18 +9,18 @@ import { MyCarousel } from '../components/Carousel';
 
 export default function Home() {
   const [movies, setMovies] = useState<Movie[]>([])
-  const recomendedMovies = movies.filter((movie)=>movie.isTrending === false)
+  console.log(movies)
 
   useEffect(()=>{
     setMovies(data)
   },[])
   return (
     <main className=" bg-[#10141E] w-[100vw] h-[100vh] flex flex-col items-center">
-        <Search/>
-        <MyCarousel/>
+        <Search movieArray={movies} setMoviesArray={setMovies}/>
+        {/* <MyCarousel/> */}
         <div className="grid grid-cols-3 gap-4 w-[900px]">
           {movies.map((movie)=>(
-            <MovieCard key={movie.title} movie={movie}/>
+            <MovieCard key={movie.title + '400'} movie={movie}/>
           ))}
         </div>
     </main>
