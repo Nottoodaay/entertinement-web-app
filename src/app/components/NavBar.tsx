@@ -28,7 +28,9 @@ export const NavBar = () => {
             <Link href={'/dashboard/tvseries'}>
               <Image src={tvSeries} alt="tv" className=' cursor-pointer'/>
             </Link>
-            <Image src={bookMark} alt="bookmark" className=' cursor-pointer' />
+            <Link href={'/dashboard/savedmovies'}>
+              <Image src={bookMark} alt="bookmark" className=' cursor-pointer' />
+            </Link>
         </div>
         <Image src={avatar} alt="avatar" className=' cursor-pointer w-[32px] h-[32px]' />
     </div>

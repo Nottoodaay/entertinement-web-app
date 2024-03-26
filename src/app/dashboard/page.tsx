@@ -9,8 +9,7 @@ import { MyCarousel } from '../components/Carousel';
 
 export default function Home() {
   const [movies, setMovies] = useState<Movie[]>([])
-  console.log(movies)
-
+  
   useEffect(()=>{
     setMovies(data)
   },[])

@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { Movie } from '../lib/definitions'
+import { Bookmark } from './Bookmark'
 
 export const MovieCard = (props:{movie: Movie}) => {
+  const [active, setActive] = useState(false)
   return (
     <div className="flex items-center justify-center">
       <div className="w-[280px] h-[226px]  relative select-none cursor-pointer">  
+          <Bookmark 
+          active={active}
+           setActive={setActive} 
+           movie={props.movie} />
           <Image
             src={`${props.movie.thumbnail.regular?.large}`}
             width={280}
