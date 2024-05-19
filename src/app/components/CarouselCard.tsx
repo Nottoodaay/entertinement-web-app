@@ -11,9 +11,7 @@ type PropsType = {
 
 const CarouselCard = ({ data }: PropsType) => {
   return (
-    <div
-      className="w-[470px] h-[230px] relative flex items-end cursor-pointer"
-    >
+    <div className="w-auto h-[230px] relative flex items-end cursor-pointer">
       <div className="bg-transparent w-full h-full absolute z-50 select-none" />
       <Image
         src={`${data.thumbnail.regular?.large}`}
