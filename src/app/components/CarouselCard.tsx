@@ -17,6 +17,7 @@ const CarouselCard = ({ data }: PropsType) => {
         src={`${data.thumbnail.regular?.large}`}
         width={470}
         height={230}
+        layout="responsive"
         alt={data.title}
         className="select-none absolute rounded-xl"
       />

@@ -14,10 +14,10 @@ export default function Home() {
     setMovies(data);
   }, []);
   return (
-    <main className=" bg-[#10141E] sm:w-5/6  w-3/5 flex flex-col">
+    <main className=" bg-[#10141E] sm:w-5/6  w-full flex flex-col">
       <Search movieArray={movies} setMoviesArray={setMovies} />
       <MyCarousel />
-      <div className="grid grid-cols-3 md:grid-cols-4 gap-4 w-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-auto">
         {movies.map((movie) => (
           <MovieCard key={movie.title + "400"} movie={movie} />
         ))}

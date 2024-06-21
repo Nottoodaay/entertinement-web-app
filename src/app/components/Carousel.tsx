@@ -2,7 +2,7 @@
 
 import React from "react";
 import movies from "../../../data.json";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -31,7 +31,7 @@ export const MyCarousel = () => {
         }}
       >
         {trendingMovies.map((result, index) => (
-          <SwiperSlide className=" m-6" key={index}>
+          <SwiperSlide key={index}>
             <CarouselCard data={result} />
           </SwiperSlide>
         ))}
