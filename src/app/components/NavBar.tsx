@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import logo from "/public/assets/logo.svg";
 import home from "/public/assets/icon-nav-home.svg";
@@ -9,8 +10,6 @@ import movies from "/public/assets/icon-nav-movies.svg";
 import tvSeries from "/public/assets/icon-nav-tv-series.svg";
 import bookMark from "/public/assets/icon-nav-bookmark.svg";
 import avatar from "/public/assets/image-avatar.png";
-
-import Link from "next/link";
 
 export const NavBar = () => {
   return (

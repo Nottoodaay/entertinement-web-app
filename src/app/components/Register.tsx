@@ -1,33 +1,29 @@
 import { auth } from "@/firebase/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { redirect } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-export const LogIn = (props: {
+export const Register = (props: {
   setDisplayComponent: (value: string) => void;
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [currentUser, setCurrentUser] = useState<string | null>("");
 
-  const login = async (email: string, password: string) => {
-    const signIn = signInWithEmailAndPassword(auth, email, password);
+  const register = async (email: string, password: string) => {
+    const signIn = createUserWithEmailAndPassword(auth, email, password);
     signIn
       .then((userCredental) => {
         const user = userCredental.user;
-        setCurrentUser(user.email);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-      });
-
+      })
+      .finally(() => console.log("succsess"));
     return signIn;
   };
 
-  useEffect(() => {
-    if (currentUser && currentUser.length > 1) redirect("/dashboard");
-  }, [currentUser]);
+  if (() => register(email, password)) redirect("/");
 
   return (
     <div>
@@ -39,7 +35,7 @@ export const LogIn = (props: {
         pl-[24px]
         "
       >
-        <h1 className=" text-[32px] text-[#FFFFFF] pt-[24px]">Login</h1>
+        <h1 className=" text-[32px] text-[#FFFFFF] pt-[24px]">Register</h1>
         <div className=" flex flex-col gap-[24px]">
           <input
             className="
@@ -72,11 +68,11 @@ export const LogIn = (props: {
              rounded-md 
              flex items-center justify-center
             bg-[#FC4747] text-[white]"
-          onClick={() => login(email, password)}
+          onClick={() => register(email, password)}
         >
           Login to your account
         </button>
-        <p onClick={() => props.setDisplayComponent("register")}>register</p>
+        <p onClick={() => props.setDisplayComponent("login")}>log in</p>
       </div>
     </div>
   );
